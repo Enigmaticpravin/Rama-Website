@@ -118,7 +118,7 @@ const ContactPopup = ({ onClose }) => {
                 Contact Rama Horn
               </h2>
               <p className="text-sm text-gray-500 max-w-md mx-auto">
-                Have questions? We're here to help. Please fill out the form below and we'll get back to you shortly.
+                Have questions? We&apos;re here to help. Please fill out the form below and we&apos;ll get back to you shortly.
               </p>
             </div>
 
