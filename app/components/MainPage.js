@@ -90,7 +90,7 @@ const UltraHornLanding = () => {
             Transform Your Road Experience
           </h2>
           <p className='text-sm md:text-xl text-gray-700 mb-10 max-w-2xl mx-auto px-10'>
-            Rama-branded-horns aren't just a product. They are a commitment to
+            Rama-branded-horns are not just a product. They are a commitment to
             safer, clearer road communication.
           </p>
           <button
