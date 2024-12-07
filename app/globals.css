@@ -19,3 +19,29 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Neumorphism and Outer Glow Effect */
+.neumorphism-glow {
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), 
+              -8px -8px 15px rgba(255, 255, 255, 0.7), 
+              0 0 10px rgba(255, 173, 101, 0.5), /* Neumorphism inset shadow */
+              0 0 25px rgba(255, 156, 86, 0.4); /* Soft outer glow */
+  background: rgba(255, 255, 255, 0.1); /* Light background for the soft effect */
+}
+
+.neumorphism-glow:hover {
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), 
+              -8px -8px 20px rgba(255, 255, 255, 0.6), 
+              0 0 15px rgba(255, 255, 255, 0.8), /* Stronger inner glow on hover */
+              0 0 35px rgba(255, 255, 255, 0.5); /* Stronger outer glow on hover */
+  transform: scale(1.1);
+}
+
+.neumorphism-glow path {
+  transition: stroke 0.3s ease;
+}
+
+.neumorphism-glow:hover path {
+  stroke: #ff6347; /* Glowing effect color change on hover */
+}

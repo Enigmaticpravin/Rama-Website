@@ -187,8 +187,7 @@ const ProductCard = ({ product }) => {
         className={`
         bg-white 
         border 
-        border-gray-200 
-        rounded-2xl 
+        border-gray-200  
         overflow-hidden 
         text-left
         transition-all 
@@ -302,15 +301,9 @@ const ProductCard = ({ product }) => {
 
 const ProductGrid = () => {
   return (
-<div className='container mx-auto pb-5 mt-10'>
-        <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900'>
-          Curated Premium Collection
-        </h1>
-        <div className='flex justify-center items-center mb-4'>
-          <div className='h-1 w-24 bg-gradient-to-r from-white via-orange-500 mb-5 mt-5 to-white rounded-full'></div>
-        </div>
-
-        <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8'>
+<div className='container mx-auto pb-5 md:mt-10'>
+  
+        <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 md:gap-8'>
           {products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}

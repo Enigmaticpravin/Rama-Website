@@ -21,15 +21,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-fit h-fit justify-center mx-auto rounded-full bg-white text-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="w-full flex flex-col mx-auto bg-white text-white shadow-md sticky top-0 z-50">
+      <div className=" px-4 sm:px-6 lg:px-8">
+        <div className="flex w-full h-16 justify-between items-center">
           <div className="flex-shrink-0">
             <Link href="/" legacyBehavior>
             <Image
             src={logo}
             alt='logo'
-            className='justify-center w-20 h-auto mr-5'
+            className=' w-14 h-auto mr-5'
           ></Image>
             </Link>
           </div>
@@ -56,29 +56,34 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-black hover:text-gray-200 focus:outline-none"
             >
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="black"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                )}
-              </svg>
+<svg
+  className="w-8 h-8 p-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:border-orange-600 neumorphism-glow"
+  fill="none"
+  stroke="black"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {isOpen ? (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M6 18L18 6M6 6l12 12"
+      className="stroke-black transition-all duration-300"
+    />
+  ) : (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M4 6h16M4 12h16m-7 6h7"
+      className="stroke-black transition-all duration-300"
+    />
+  )}
+</svg>
+
+
+
             </button>
           </div>
         </div>

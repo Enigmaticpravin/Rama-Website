@@ -1,6 +1,6 @@
 'use client'
 
-import logo from '@/app/images/LOGO RAMA.png'
+import header from '@/app/images/hornhead.gif'
 import ContactPopup from './ContactPopup'
 import horn from '@/app/images/horn.png'
 import Image from 'next/image'
@@ -37,30 +37,24 @@ const UltraHornLanding = () => {
   }
 
   return (
-    <div className='text-white flex flex-col justify-center pt-6'>
-          <Navbar></Navbar>
-      <div
-        ref={sectionRefs.hero}
-        style={{
-          transform: `translateY(${calculateParallax(
-            sectionRefs.hero,
-            0.3
-          )}px)`,
-          backgroundImage: `
-            linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '30px 30px'
-        }}
-        className='flex flex-col -mt-20 items-center justify-center text-center px-4 bg-white'
-      >
-        <div className='z-10 max-w-4xl animate-fade-in justify-center items-center flex flex-col mt-24'>
+    <div ref={sectionRefs.hero}
+    style={{
+            backgroundImage: `
+        linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)
+      `,
+      backgroundSize: '30px 30px'
+    }}
+    className='flex flex-col items-center justify-center text-center bg-white'>
+         <Navbar></Navbar>
+            <img src='https://i.imgur.com/J6JSq6r.gif'></img>
+        <div className='z-10 max-w-4xl animate-fade-in justify-center items-center flex-col mt-24 hidden'>
           
           <div className='hidden'>
             <Image src={horn} alt='product' className='-mb-20'></Image>
           </div>
           <h1
-            className='text-2xl md:text-6xl font-bold mt-10 text-orange-400 animate-slide-up uppercase'
+            className='text-2xl md:text-6xl font-bold mt-10 hidden text-orange-400 animate-slide-up uppercase'
             style={poppinsStyle}
           >
             A horn that blows
@@ -81,7 +75,6 @@ const UltraHornLanding = () => {
          
         </div>
         <ProductGrid></ProductGrid>
-      </div>
       {isPopupOpen && <ContactPopup onClose={() => setIsPopupOpen(false)} />}
     </div>
   )
