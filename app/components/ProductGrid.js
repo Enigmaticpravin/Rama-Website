@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { Star, ShoppingCart, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react'
+import { Star, ShoppingCart, CheckCircle } from 'lucide-react'
 
 const products = [
   {
     id: 1,
-    name: 'Quantum Noise-Canceling Headphones',
+    name: 'Twin Echo Horn',
     brand: 'SonicPro',
     price: 429.99,
     originalPrice: 499.99,
     rating: 4.8,
-    image: '/api/placeholder/300/300',
-    description: 'Cutting-edge acoustic engineering with adaptive noise cancellation and premium leather ear cushions.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Cutting-edge acoustic engineering with adaptive noise cancellation and premium leather ear cushions.',
     features: [
       'Bluetooth 5.2',
       '40-hour Battery',
@@ -20,13 +22,15 @@ const products = [
   },
   {
     id: 2,
-    name: 'Precision Fitness Smartwatch',
+    name: 'Crossfire Blast',
     brand: 'HealthTrack',
-    price: 349.50,
+    price: 349.5,
     originalPrice: 399.99,
     rating: 4.9,
-    image: '/api/placeholder/300/300',
-    description: 'Advanced health monitoring with ECG, GPS tracking, and comprehensive wellness insights.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Advanced health monitoring with ECG, GPS tracking, and comprehensive wellness insights.',
     features: [
       'ECG Monitor',
       'GPS Tracking',
@@ -36,13 +40,15 @@ const products = [
   },
   {
     id: 3,
-    name: 'UltraCharge Wireless Power Station',
+    name: 'Dual Strike',
     brand: 'PowerCore',
     price: 199.99,
     originalPrice: 249.99,
     rating: 4.7,
-    image: '/api/placeholder/300/300',
-    description: 'Multi-device charging hub with intelligent power distribution and premium aluminum construction.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Multi-device charging hub with intelligent power distribution and premium aluminum construction.',
     features: [
       'Multiple Ports',
       'Fast Charging',
@@ -52,13 +58,15 @@ const products = [
   },
   {
     id: 4,
-    name: 'Elite Noise-Canceling Earbuds',
+    name: 'Double Barrel',
     brand: 'AudioMaster',
     price: 279.99,
     originalPrice: 329.99,
     rating: 4.8,
-    image: '/api/placeholder/300/300',
-    description: 'True wireless earbuds with studio-grade sound and adaptive noise cancellation technology.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'True wireless earbuds with studio-grade sound and adaptive noise cancellation technology.',
     features: [
       'Hi-Res Audio',
       'Active Noise Cancel',
@@ -68,13 +76,15 @@ const products = [
   },
   {
     id: 5,
-    name: 'ProGuard Home Security System',
+    name: 'Twin Flame',
     brand: 'SecureNet',
     price: 449.99,
     originalPrice: 499.99,
     rating: 4.9,
-    image: '/api/placeholder/300/300',
-    description: 'Comprehensive AI-powered security solution with 4K night vision and real-time mobile alerts.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Comprehensive AI-powered security solution with 4K night vision and real-time mobile alerts.',
     features: [
       '4K Resolution',
       'AI Detection',
@@ -84,13 +94,15 @@ const products = [
   },
   {
     id: 6,
-    name: 'Ergonomic Executive Chair',
+    name: 'Split Roar',
     brand: 'WorkMaster',
     price: 699.99,
     originalPrice: 849.99,
     rating: 4.9,
-    image: '/api/placeholder/300/300',
-    description: 'Premium ergonomic office chair with adaptive lumbar support and aerospace-grade materials.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Premium ergonomic office chair with adaptive lumbar support and aerospace-grade materials.',
     features: [
       'Adaptive Support',
       'Premium Leather',
@@ -100,29 +112,28 @@ const products = [
   },
   {
     id: 7,
-    name: 'Quantum Bluetooth Speaker',
+    name: 'Parallel Pulse',
     brand: 'SoundWave',
-    price: 249.50,
+    price: 249.5,
     originalPrice: 299.99,
     rating: 4.7,
-    image: '/api/placeholder/300/300',
-    description: 'Immersive 360-degree sound with adaptive acoustic technology and rugged waterproof design.',
-    features: [
-      '360° Sound',
-      'Waterproof',
-      '20hr Battery',
-      'Smart Connect'
-    ]
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Immersive 360-degree sound with adaptive acoustic technology and rugged waterproof design.',
+    features: ['360° Sound', 'Waterproof', '20hr Battery', 'Smart Connect']
   },
   {
     id: 8,
-    name: 'Professional Drawing Tablet',
+    name: 'Twin Tuner',
     brand: 'CreativePro',
     price: 399.99,
     originalPrice: 449.99,
     rating: 4.8,
-    image: '/api/placeholder/300/300',
-    description: 'Advanced digital canvas with pressure-sensitive surface and professional-grade color accuracy.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Advanced digital canvas with pressure-sensitive surface and professional-grade color accuracy.',
     features: [
       '4K Display',
       'Pressure Sensitive',
@@ -132,29 +143,28 @@ const products = [
   },
   {
     id: 9,
-    name: 'Smart Precision Coffee Maker',
+    name: 'Mirror Tone',
     brand: 'BrewMaster',
     price: 299.99,
     originalPrice: 349.99,
     rating: 4.7,
-    image: '/api/placeholder/300/300',
-    description: 'Intelligent brewing system with precision temperature control and personalized coffee profiles.',
-    features: [
-      'AI Brewing',
-      'Temp Control',
-      'App Connect',
-      'Custom Profiles'
-    ]
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Intelligent brewing system with precision temperature control and personalized coffee profiles.',
+    features: ['AI Brewing', 'Temp Control', 'App Connect', 'Custom Profiles']
   },
   {
     id: 10,
-    name: 'Professional Gaming Precision Mouse',
+    name: 'Echo Blade',
     brand: 'GameTech',
     price: 179.99,
     originalPrice: 219.99,
     rating: 4.8,
-    image: '/api/placeholder/300/300',
-    description: 'Hyper-precise gaming mouse with customizable weight system and programmable optical switches.',
+    image:
+      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+    description:
+      'Hyper-precise gaming mouse with customizable weight system and programmable optical switches.',
     features: [
       'Optical Switches',
       'Adjustable Weight',
@@ -162,18 +172,19 @@ const products = [
       'Ergonomic Design'
     ]
   }
-];
+]
 
 const ProductCard = ({ product }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div 
-      className="group relative"
+    <div
+      className='group relative'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`
+      <div
+        className={`
         bg-white 
         border 
         border-gray-200 
@@ -185,19 +196,25 @@ const ProductCard = ({ product }) => {
         transform 
         ${isHovered ? 'shadow-2xl -translate-y-2' : 'shadow-lg'}
         relative
-      `}>
+      `}
+      >
         {/* Discount Badge */}
         {product.originalPrice && (
-          <div className="absolute top-4 left-4 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-            {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
+          <div className='absolute top-4 left-4 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold'>
+            {Math.round(
+              ((product.originalPrice - product.price) /
+                product.originalPrice) *
+                100
+            )}
+            % OFF
           </div>
         )}
 
         {/* Product Image */}
-        <div className="relative overflow-hidden">
-          <img 
-            src={product.image} 
-            alt={product.name} 
+        <div className='relative overflow-hidden'>
+          <img
+            src={product.image}
+            alt={product.name}
             className={`
               w-full 
               h-64 
@@ -208,27 +225,34 @@ const ProductCard = ({ product }) => {
             `}
           />
         </div>
-        
+
         {/* Product Details */}
-        <div className="p-6">
+        <div className='p-6'>
           {/* Brand and Rating */}
-          <div className="flex justify-between items-center mb-3">
-            <span className="text-sm font-medium text-gray-500">{product.brand}</span>
-            <div className="flex items-center text-yellow-500">
-              <Star className="w-4 h-4 mr-1" fill="currentColor" />
-              <span className="font-semibold text-sm">{product.rating}</span>
+          <div className='flex justify-between items-center mb-3'>
+            <span className='text-sm font-medium text-gray-500'>
+              {product.brand}
+            </span>
+            <div className='flex items-center text-yellow-500'>
+              <Star className='w-4 h-4 mr-1' fill='currentColor' />
+              <span className='font-semibold text-sm'>{product.rating}</span>
             </div>
           </div>
 
           {/* Product Name */}
-          <h3 className="font-bold text-xl text-gray-800 mb-3 line-clamp-2">{product.name}</h3>
+          <h3 className='font-bold text-lg md:text-xl text-gray-800 mb-3 line-clamp-2'>
+            {product.name}
+          </h3>
 
           {/* Features */}
-          <div className="mb-4">
-            <div className="grid grid-cols-2 gap-2">
-              {product.features.map((feature) => (
-                <div key={feature} className="flex items-center text-xs text-gray-600">
-                  <CheckCircle className="w-3 h-3 mr-2 text-green-500" />
+          <div className='mb-4'>
+            <div className='grid grid-cols-2 gap-2'>
+              {product.features.map(feature => (
+                <div
+                  key={feature}
+                  className='flex items-center text-xs text-gray-600'
+                >
+                  <CheckCircle className='w-3 h-3 mr-2 text-green-500' />
                   {feature}
                 </div>
               ))}
@@ -236,21 +260,25 @@ const ProductCard = ({ product }) => {
           </div>
 
           {/* Price and Buy Button */}
-          <div className="flex justify-between items-center">
+          <div className='flex justify-between items-center'>
             <div>
-              <span className="text-2xl font-bold text-gray-900 mr-3">${product.price.toFixed(2)}</span>
+              <span className='text-sm md:text-2xl font-bold text-gray-900 mr-3'>
+                ${product.price.toFixed(2)}
+              </span>
               {product.originalPrice && (
-                <span className="text-sm text-gray-400 line-through">
+                <span className='text-xs md:text-sm text-gray-400 line-through'>
                   ${product.originalPrice.toFixed(2)}
                 </span>
               )}
             </div>
-            <button 
+            <button
               className={`
                 bg-black 
                 text-white 
-                px-6 
-                py-3 
+                px-3
+                py-1
+                md:px-6 
+                md:py-3 
                 rounded-full 
                 hover:bg-gray-800 
                 transition-all 
@@ -262,35 +290,34 @@ const ProductCard = ({ product }) => {
                 ${isHovered ? 'shadow-xl' : ''}
               `}
             >
-              <ShoppingCart className="w-4 h-4 mr-2" />
+              <ShoppingCart className='w-4 h-4 mr-2' />
               Purchase
             </button>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const ProductGrid = () => {
   return (
-    <div className=" min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900">
+<div className='container mx-auto pb-5 mt-10'>
+        <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900'>
           Curated Premium Collection
         </h1>
-        <div className="flex justify-center items-center">
-  <div className="h-1 w-24 bg-gradient-to-r from-white via-orange-500 mb-5 mt-5 to-white rounded-full"></div>
-</div>
+        <div className='flex justify-center items-center mb-4'>
+          <div className='h-1 w-24 bg-gradient-to-r from-white via-orange-500 mb-5 mt-5 to-white rounded-full'></div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
-          {products.map((product) => (
+        <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8'>
+          {products.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
-    </div>
   );
 };
 
-export default ProductGrid;
+
+export default ProductGrid

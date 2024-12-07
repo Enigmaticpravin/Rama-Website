@@ -37,7 +37,7 @@ const UltraHornLanding = () => {
   }
 
   return (
-    <div className='text-white overflow-x-hidden flex flex-col justify-center pt-6'>
+    <div className='text-white flex flex-col justify-center pt-6'>
           <Navbar></Navbar>
       <div
         ref={sectionRefs.hero}
