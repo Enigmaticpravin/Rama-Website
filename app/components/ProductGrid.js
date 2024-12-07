@@ -189,6 +189,7 @@ const ProductCard = ({ product }) => {
         border 
         border-gray-200  
         overflow-hidden 
+        md:rounded-xl
         text-left
         transition-all 
         duration-500 
@@ -244,7 +245,7 @@ const ProductCard = ({ product }) => {
           </h3>
 
           {/* Features */}
-          <div className='mb-4'>
+          <div className='mb-4 hidden'>
             <div className='grid grid-cols-2 gap-2'>
               {product.features.map(feature => (
                 <div
@@ -301,7 +302,7 @@ const ProductCard = ({ product }) => {
 
 const ProductGrid = () => {
   return (
-<div className='container mx-auto pb-5 md:mt-10'>
+<div className='container mx-auto md:mt-10'>
   
         <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 md:gap-8'>
           {products.map(product => (
