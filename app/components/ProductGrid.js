@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Star, ShoppingCart, CheckCircle } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const products = [
   {
@@ -10,15 +12,9 @@ const products = [
     originalPrice: 499.99,
     rating: 4.8,
     image:
-      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+      'https://images.unsplash.com/photo-1541414779316-956a5084c0d4?q=80&w=2007&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description:
       'Cutting-edge acoustic engineering with adaptive noise cancellation and premium leather ear cushions.',
-    features: [
-      'Bluetooth 5.2',
-      '40-hour Battery',
-      'Adaptive ANC',
-      'Multipoint Connect'
-    ]
   },
   {
     id: 2,
@@ -28,15 +24,9 @@ const products = [
     originalPrice: 399.99,
     rating: 4.9,
     image:
-      'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
+      'https://images.unsplash.com/photo-1541414779316-956a5084c0d4?q=80&w=2007&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description:
       'Advanced health monitoring with ECG, GPS tracking, and comprehensive wellness insights.',
-    features: [
-      'ECG Monitor',
-      'GPS Tracking',
-      'Water Resistant',
-      'Sleep Analysis'
-    ]
   },
   {
     id: 3,
@@ -49,12 +39,6 @@ const products = [
       'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     description:
       'Multi-device charging hub with intelligent power distribution and premium aluminum construction.',
-    features: [
-      'Multiple Ports',
-      'Fast Charging',
-      'Smart Power',
-      'Compact Design'
-    ]
   },
   {
     id: 4,
@@ -67,12 +51,6 @@ const products = [
       'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     description:
       'True wireless earbuds with studio-grade sound and adaptive noise cancellation technology.',
-    features: [
-      'Hi-Res Audio',
-      'Active Noise Cancel',
-      '8hr Battery',
-      'Touch Control'
-    ]
   },
   {
     id: 5,
@@ -85,12 +63,6 @@ const products = [
       'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     description:
       'Comprehensive AI-powered security solution with 4K night vision and real-time mobile alerts.',
-    features: [
-      '4K Resolution',
-      'AI Detection',
-      'Cloud Storage',
-      '24/7 Monitoring'
-    ]
   },
   {
     id: 6,
@@ -103,12 +75,6 @@ const products = [
       'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     description:
       'Premium ergonomic office chair with adaptive lumbar support and aerospace-grade materials.',
-    features: [
-      'Adaptive Support',
-      'Premium Leather',
-      '4D Armrests',
-      'Weight Sensing'
-    ]
   },
   {
     id: 7,
@@ -134,12 +100,6 @@ const products = [
       'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     description:
       'Advanced digital canvas with pressure-sensitive surface and professional-grade color accuracy.',
-    features: [
-      '4K Display',
-      'Pressure Sensitive',
-      'Color Calibrated',
-      'Wireless'
-    ]
   },
   {
     id: 9,
@@ -165,12 +125,6 @@ const products = [
       'https://i5.walmartimages.com/seo/Brass-Classic-Decorative-Taxi-Horn-Rubber-Vintage-Circular-With-Black-Bulb-Bugle-For-Taxi-Bike-Bus-Truck-Auto-Home-Decor-antique_3eb2fba3-e4b8-4759-822b-c8210afef6d3.50b36c70f8784a15c377dff8f0bee320.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF',
     description:
       'Hyper-precise gaming mouse with customizable weight system and programmable optical switches.',
-    features: [
-      'Optical Switches',
-      'Adjustable Weight',
-      'RGB Lighting',
-      'Ergonomic Design'
-    ]
   }
 ]
 
@@ -178,6 +132,7 @@ const ProductCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
+    <Link href={`/products/${product.id}`}>
     <div
       className='group relative'
       onMouseEnter={() => setIsHovered(true)}
@@ -212,9 +167,11 @@ const ProductCard = ({ product }) => {
 
         {/* Product Image */}
         <div className='relative overflow-hidden'>
-          <img
+          <Image
             src={product.image}
             alt={product.name}
+            width={300}
+            height={300}
             className={`
               w-full 
               h-64 
@@ -223,6 +180,7 @@ const ProductCard = ({ product }) => {
               duration-500 
               ${isHovered ? 'scale-110' : 'scale-100'}
             `}
+            priority
           />
         </div>
 
@@ -243,22 +201,6 @@ const ProductCard = ({ product }) => {
           <h3 className='font-bold text-lg md:text-xl text-gray-800 mb-3 line-clamp-2'>
             {product.name}
           </h3>
-
-          {/* Features */}
-          <div className='mb-4 hidden'>
-            <div className='grid grid-cols-2 gap-2'>
-              {product.features.map(feature => (
-                <div
-                  key={feature}
-                  className='flex items-center text-xs text-gray-600'
-                >
-                  <CheckCircle className='w-3 h-3 mr-2 text-green-500' />
-                  {feature}
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Price and Buy Button */}
           <div className='flex justify-between items-center'>
             <div>
@@ -297,6 +239,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
     </div>
+    </Link>
   )
 }
 

@@ -7,6 +7,7 @@ import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
 import Navbar from './Navbar'
 import ProductGrid from './ProductGrid'
+import Footer from './Footer'
 
 const UltraHornLanding = () => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -76,6 +77,7 @@ const UltraHornLanding = () => {
         </div>
         <ProductGrid></ProductGrid>
       {isPopupOpen && <ContactPopup onClose={() => setIsPopupOpen(false)} />}
+        <Footer></Footer>
     </div>
   )
 }

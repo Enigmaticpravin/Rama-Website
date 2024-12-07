@@ -47,13 +47,13 @@ const Navbar = () => {
       }}
     >
       <div className=' px-4 sm:px-6 lg:px-8'>
-        <div className='flex w-full h-12 md:h-20 justify-between items-center'>
+        <div className='flex w-full h-14 md:h-20 justify-between items-center'>
           <div className='flex-shrink-0'>
             <Link href='/' legacyBehavior>
               <Image
                 src={logo}
                 alt='logo'
-                className=' w-14 h-auto mr-5'
+                className=' w-14 h-auto mr-5 cursor-pointer'
               ></Image>
             </Link>
           </div>
